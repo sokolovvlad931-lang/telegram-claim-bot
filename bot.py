@@ -230,7 +230,14 @@ async def ocr_process(message: types.Message, state: FSMContext):
     await message.answer("🔍 Распознаю чек...")
     await asyncio.sleep(2)
 
-    await messag
+    await message.answer(
+        "✅ Чек получен (демо).\nНажмите «Создать претензию».",
+        reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="Создать претензию", callback_data="create_claim")]
+        ])
+    )
+    await state.clear()
+
     # ================== ЗАПУСК ==================
 
 async def main():
@@ -239,5 +246,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
 
