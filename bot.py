@@ -231,3 +231,13 @@ async def ocr_process(message: types.Message, state: FSMContext):
     await asyncio.sleep(2)
 
     await messag
+    # ================== ЗАПУСК ==================
+
+async def main():
+    print("🤖 Бот запущен и слушает Telegram")
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+
