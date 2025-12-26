@@ -221,4 +221,13 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
+
         print("Бот остановлен.")
+        # ================== ЗАПУСК ==================
+
+async def main():
+    print("🤖 Бот запущен и слушает Telegram")
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())
